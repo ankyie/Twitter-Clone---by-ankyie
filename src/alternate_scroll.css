@@ -1,0 +1,14 @@
+body{
+    height: 100vh;
+}
+
+/* scroll for middle and right sections  */
+#middle-bar,  #right-bar {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+#middle-bar::-webkit-scrollbar,  #right-bar::-webkit-scrollbar {
+    display: none; 
+}

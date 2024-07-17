@@ -1,0 +1,1002 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://abs.twimg.com/favicons/twitter.3.ico" type="image/x-icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/custom_scroll_style.css">
+    <link rel="stylesheet" href="src/hidden_premium_button.css">
+    <!-- <link rel="stylesheet" href="src/alternate_scroll.css"> -->
+</head>
+
+<body class="bg-black text-white m-0 p-0 flex justify-center">
+    <div class="twit-cont flex w-[85%] h-full border-4 border-black m-auto max-xl:w-[95%] max-[900px]:w-[96%] max-sm:w-full">
+        <nav class="w-[20%] fixed h-[98vh] p-0.5 z-10 flex flex-col justify-between max-xl:w-[5%] max-xl:p-0 max-[900px]:w-[12%] max-sm:hidden">
+            <div class="nav-top">
+                <!-- This is the new twitter Logo  -->
+                <div class="logo ml-2 max-xl:ml-1">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"
+                        class="w-11 invert rounded-full duration-300 cursor-pointer hover:bg-[#e7e7e7] p-2 r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                        <g>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- These are the various navigation sections  -->
+                <div class="btn-cont flex flex-col justify-between">
+                    <!-- This is Home icon -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                home
+                            </span>
+                            <span class="max-xl:hidden">Home</span>
+                        </div>
+                    </div>
+
+                    <!-- This is the explore section  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                search
+                            </span>
+                            <span class="max-xl:hidden">Explore</span>
+                        </div>
+                    </div>
+
+                    <!-- Your notifications  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                notifications
+                            </span>
+                            <span class="max-xl:hidden">Notifications</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Messages are here  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                mail
+                            </span>
+                            <span class="max-xl:hidden">Messages</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Grok button  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                indeterminate_check_box
+                            </span>
+                            <span class="max-xl:hidden">Grok</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Bookmarks are here  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                bookmark
+                            </span>
+                            <span class="max-xl:hidden">Bookmark</span>
+                        </div>
+
+                    </div>
+
+                    <!-- This is the community button  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                group
+                            </span>
+                            <span class="max-xl:hidden">Communities</span>
+                        </div>
+
+                    </div>
+
+                    <!-- This is the premium button  -->
+                    <div class="btns flex text-xl font-medium" id="premium-btn">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"
+                                class="w-6 invert r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                                <g>
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                                    </path>
+                                </g>
+                            </svg>
+                            <span class="max-xl:hidden">Premium</span>
+                        </div>
+
+                    </div>
+
+                    <!-- This is the Profile button  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                person
+                            </span>
+                            <span class="max-xl:hidden">Profile</span>
+                        </div>
+
+                    </div>
+
+                    <!-- This is the more button  -->
+                    <div class="btns flex text-xl font-medium">
+                        <div
+                            class="nav-btn-cont flex items-center gap-3 px-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] py-2 max-xl:px-3">
+                            <span class="material-symbols-outlined text-3xl">
+                                more_horiz
+                            </span>
+                            <span class="max-xl:hidden">More</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- This is the post section  -->
+                 <div class="post-section max-xl:ml-1">
+                     <button
+                         class="post w-[85%] p-3 rounded-full font-medium flex items-center justify-center text-lg bg-[#1D99F0] hover:bg-[#368cc9] duration-300 mt-2 max-xl:w-auto">
+                         <span class="max-xl:hidden">Post</span>
+                         <span class="material-symbols-outlined invisible max-xl:visible">
+                            history_edu
+                            </span>
+                     </button>
+                 </div>
+            </div>
+            <div class="nav-bottom">
+                <!--MY Profile section  -->
+                <div
+                    class="profile flex w-[95%] justify-between items-center p-4 rounded-full duration-300 cursor-pointer hover:bg-[#181818] max-xl:p-0 max-xl:ml-2">
+                    <div class="pfp-tag flex items-center gap-2">
+                        <div class="pfp">
+                            <img alt="ankyie" draggable="true"
+                                src="https://pbs.twimg.com/profile_images/1810732927308767232/eoQRkLSj_bigger.jpg"
+                                class="ankyie-pfp rounded-full w-11 max-xl:w-12">
+                        </div>
+                        <div class="name-tag max-xl:hidden">
+                            <div class="name">
+                                ankyie
+                            </div>
+                            <div class="tag text-gray-500">
+                                @ankyieYT
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three-dot">
+                        <span class="material-symbols-outlined text-xl max-xl:hidden">
+                            more_horiz
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+        <!-- placeholder for navigation section to make navigation a fixed section -->
+        <div class="hidden-div w-[25%] relative h-[100vh] p-0.5 max-xl:w-[7%] max-xl:p-0 max-[900px]:w-[12%] max-sm:hidden"></div>
+
+        <main class="border-x-[1px] border-gray-600 w-[48%] max-[900px]:w-full" id="middle-bar">
+
+            <!-- for you and following tabs  -->
+             <!-- for you following (top)  -->
+            <div class="for-you-follow-mobile-logo-top flex justify-center relative mb-3 sm:hidden">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"
+                        class="w-10 invert r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-lrvibr r-m6rgpd r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
+                        <g>
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="pfp-top-mobile-logo absolute left-2 top-1">
+                    <img alt="ankyie" draggable="true"
+                        src="https://pbs.twimg.com/profile_images/1810732927308767232/eoQRkLSj_bigger.jpg"
+                        class="ankyie-pfp rounded-full w-10">
+                </div>
+            </div>
+            <!-- for you + following button (bottom) -->
+            <div
+                class="for-you-and-following-tabs flex min-h-12 sticky top-0 border-b border-gray-600 bg-black bg-opacity-70 backdrop-blur w-full">
+                <div
+                    class="for-you-tab flex justify-center items-center w-full duration-300 cursor-pointer hover:bg-[#181818]">
+                    <div class="for-you-cont relative h-full">
+                        <h1 class="relative top-2 font-bold">For you</h1>
+                        <div class="highlighted-tab absolute bottom-0 h-1 rounded-full w-full bg-[#1D99F0]"></div>
+                    </div>
+                </div>
+                <div
+                    class="following-people-tab flex justify-center items-center w-full duration-300 cursor-pointer hover:bg-[#181818]">
+                    <div class="for-you-cont relative h-full">
+                        <h1 class="relative top-2 font-bold text-gray-500">Following</h1>
+                        <!-- <div class="highlighted-tab absolute bottom-0 h-1 rounded-full w-full bg-[#1D99F0]"></div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- This part contains the posting area  -->
+            <div class="post-cont flex p-4 border-b border-gray-600 max-sm:hidden">
+                <div class="post-pfp w-16">
+                    <img alt="ankyie" draggable="true"
+                        src="https://pbs.twimg.com/profile_images/1810732927308767232/eoQRkLSj_bigger.jpg"
+                        class="ankyie-pfp rounded-full w-[80%]">
+                </div>
+                <div class="post-text-and-functions w-full flex flex-col gap-3">
+                    <div class="input w-full h-10 ">
+                        <input type="text" placeholder="What is happening?!"
+                            class="bg-transparent outline-none w-full h-full placeholder:text-xl text-xl">
+                    </div>
+                    <div class="post-globe-section">
+                        <button>
+                            <div
+                                class="post-globe-cont px-2 py-1 justify-evenly flex items-center gap-1 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                <span class="material-symbols-outlined text-sm text-[#1D99F0]">
+                                    globe_asia
+                                </span>
+                                <span class="text-sm text-[#1D99F0] font-bold">Everyone can reply</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="post-line border-t border-gray-600">
+
+                    </div>
+                    <div class="post-btn-and-icons flex justify-between items-center">
+                        <div class="post-icons flex items-center gap-1">
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                image
+                            </span>
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                gif_box
+                            </span>
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                format_list_bulleted
+                            </span>
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                sentiment_satisfied
+                            </span>
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                pending_actions
+                            </span>
+                            <span
+                                class="material-symbols-outlined text-lg py-1 px-2 rounded-full text-[#1D99F0] cursor-pointer hover:bg-[#06111a] duration-300">
+                                location_on
+                            </span>
+                        </div>
+                        <div class="post-btn w-[15%]">
+                            <button
+                                class="post w-full p-1 rounded-full font-medium bg-[#1D99F0] hover:bg-[#368cc9] duration-300">
+                                Post
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- show more posts section  -->
+            <div
+                class="show-more-posts flex justify-center items-center p-4 border-b border-gray-600 duration-300 cursor-pointer hover:bg-[#181818]">
+                <span class="text-[#1D99F0]">Show 105 posts</span>
+            </div>
+
+            <!-- post button for mobile  -->
+             <div class="mobile-post-button fixed bottom-16 right-3 sm:hidden">
+                <button class="flex justify-center items-center p-3 bg-[#1D99F0] rounded-full cursor-pointer hover:bg-[#368cc9] duration-300">
+                    <span class="material-symbols-outlined text-4xl">
+                        history_edu
+                        </span>
+                </button>
+             </div>
+
+            <!-- navigation for mobile  -->
+            <div class="bottom-navigation-buttons-for-mobile fixed bottom-0 z-20 bg-black w-full border-t border-gray-600 sm:hidden">
+                <div class="bottom-nav-cont flex justify-evenly">
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            home
+                            </span>
+                    </button>
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            search
+                            </span>
+                    </button>
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            indeterminate_check_box
+                            </span>
+                    </button>
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            notifications
+                            </span>
+                    </button>
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            Message
+                            </span>
+                    </button>
+                    <button class="px-2 py-1 duration-300 cursor-pointer hover:bg-[#181818] rounded-full">
+                        <span class="material-symbols-outlined text-3xl">
+                            group
+                            </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- continuous posts after this  -->
+            <!-- post 1  -->
+            <div class="others-post flex p-3 gap-3 cursor-pointer">
+                <!-- pfp of others here  -->
+                <div class="others-pfp w-16">
+                    <img src="https://pbs.twimg.com/profile_images/1388801584075710464/NBA2XTXq_bigger.jpg" alt="
+                    Raj Kumar Official
+                     pfp" class="rounded-full">
+                </div>
+                <!-- all the text for other's post is here  -->
+                <div class="name-tag-text-views w-full max-[375px]:w-[80%]">
+                    <!-- text top line  -->
+                    <div class="others-name-and-dots flex justify-between">
+                        <div class="others-name-left">
+                            <span class="others-name font-bold hover:underline">
+                                Raj Kumar Official
+                            </span>
+                            <span class="others-tag text-gray-500 hover:underline">
+                                @1rajkumar123
+                            </span>
+                            <span class="text-gray-500">
+                                ·
+                            </span>
+                            <span class="others-time text-gray-500 hover:underline">
+                                10h
+                            </span>
+                        </div>
+                        <div class="others-three-dots">
+                            <button class="hover:text-[#1D99F0] duration-300 hover:bg-[#0b1821] px-1 rounded-full">
+                                <span class="material-symbols-outlined text-xl">
+                                    more_horiz
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- others hashtags  -->
+                    <div class="others-hastags">
+                        <a href="#" class="text-[#1D99F0] hover:underline">#GodMorningThursday</a>
+                    </div>
+
+                    <!-- others post text part  -->
+                    <div class="others-post-text">
+                        <pre class="text-wrap">
+
+At present, Saint Rampal Ji Maharaj is the only Tatvdarshi Saint in the whole world who will make India a golden bird again.
+
+For more information 👁️👁️👇 
+Visit satlok ashram YouTube channel
+                        </pre>
+                    </div>
+
+                    <!-- This is a post of an image from others  -->
+                    <div class="others-image-post pr-8">
+                        <img src="https://pbs.twimg.com/media/GSKzv_dWkAAul0c?format=jpg&name=medium" alt="some img"
+                            class="rounded-2xl">
+                    </div>
+
+                    <!-- different buttons for different posts  -->
+                    <div class="others-post-btns flex justify-between items-center my-2 max-[375px]:flex-wrap">
+                        <!-- others comment -->
+                        <div class="others-comments flex items-center group">
+                            <div
+                                class="comment-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                <span
+                                    class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                    comment
+                                </span>
+                            </div>
+                            <span
+                                class="comment-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">1</span>
+                        </div>
+
+                        <!-- others repost  -->
+                        <div class="others-repost">
+                            <div class="others-repost flex items-center group">
+                                <div
+                                    class="repost-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b251b] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#00ba7c] duration-300">
+                                        repeat
+                                    </span>
+                                </div>
+                                <span
+                                    class="repost-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#00ba7c] duration-300">634</span>
+                            </div>
+                        </div>
+
+                        <!-- others likes  -->
+                        <div class="others-likes">
+                            <div class="others-likes flex items-center group">
+                                <div
+                                    class="likes-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#2b0d1c] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#f91880] duration-300">
+                                        favorite
+                                    </span>
+                                </div>
+                                <span
+                                    class="likes-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#f91880] duration-300">581</span>
+                            </div>
+                        </div>
+
+                        <!-- others views  -->
+                        <div class="others-views">
+                            <div class="others-views flex items-center group">
+                                <div
+                                    class="views-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        equalizer
+                                    </span>
+                                </div>
+                                <span
+                                    class="views-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">1.6k</span>
+                            </div>
+                        </div>
+
+                        <!-- bookmark and shares  -->
+                        <div class="bookmark-and-share flex items-center justify-center">
+                            <div class="others-bookmark-and-share flex items-center">
+                                <div
+                                    class="bookmark-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        bookmark
+                                    </span>
+                                </div>
+                                <div
+                                    class="share-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        share
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- post 2  -->
+            <div class="others-post flex p-3 gap-3 cursor-pointer">
+                <!-- pfp of others here  -->
+                <div class="others-pfp w-16">
+                    <img src="https://pbs.twimg.com/profile_images/1450363341184983042/K3IBOU--_bigger.jpg" alt="
+                    Raj Kumar Official
+                     pfp" class="rounded-full">
+                </div>
+                <!-- all the text for other's post is here  -->
+                <div class="name-tag-text-views w-full max-[375px]:w-[80%]">
+                    <!-- text top line  -->
+                    <div class="others-name-and-dots flex justify-between">
+                        <div class="others-name-left">
+                            <span class="others-name font-bold hover:underline">
+                                Times Algebra
+                            </span>
+                            <span class="others-tag text-gray-500 hover:underline">
+                                @TimesAlgebraIND
+                            </span>
+                            <span class="text-gray-500">
+                                ·
+                            </span>
+                            <span class="others-time text-gray-500 hover:underline">
+                                21h
+                            </span>
+                        </div>
+                        <div class="others-three-dots">
+                            <button class="hover:text-[#1D99F0] duration-300 hover:bg-[#0b1821] px-1 rounded-full">
+                                <span class="material-symbols-outlined text-xl">
+                                    more_horiz
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- others hashtags  -->
+                    <!-- <div class="others-hastags">
+                        <a href="#" class="text-[#1D99F0] hover:underline">#GodMorningThursday</a>
+                    </div> -->
+
+                    <!-- others post text part  -->
+                    <div class="others-post-text">
+                        <pre class="text-wrap">
+BIG NEWS 🚨 Union Minister Giriraj Singh said "Muslims didn't vote for me. So, I am also now not in favour of working for them"
+
+"A Maulvi in my area got house, LPG-Ujjwala, Ayushman worth 5 Lakhs, Toilet & Ration"
+                            
+"When I asked him to swear that he voted for me, he said he didn't. My heart is broken"
+                            
+"It's a well thought out strategy to weaken Sanatan and bring Ghazwa-e-Hind in Bharat" - he said
+                        </pre>
+                    </div>
+
+                    <!-- This is a post of an image from others  -->
+                    <div class="others-image-post pr-8">
+                        <img src="https://pbs.twimg.com/media/GSJMO7uXEAEtu6n?format=jpg&name=small" alt="some img"
+                            class="rounded-2xl">
+                    </div>
+
+                    <!-- different buttons for different posts  -->
+                    <div class="others-post-btns flex justify-between items-center my-2 max-[375px]:flex-wrap">
+                        <!-- others comment -->
+                        <div class="others-comments flex items-center group">
+                            <div
+                                class="comment-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                <span
+                                    class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                    comment
+                                </span>
+                            </div>
+                            <span
+                                class="comment-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">901</span>
+                        </div>
+
+                        <!-- others repost  -->
+                        <div class="others-repost">
+                            <div class="others-repost flex items-center group">
+                                <div
+                                    class="repost-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b251b] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#00ba7c] duration-300">
+                                        repeat
+                                    </span>
+                                </div>
+                                <span
+                                    class="repost-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#00ba7c] duration-300">6.5K</span>
+                            </div>
+                        </div>
+
+                        <!-- others likes  -->
+                        <div class="others-likes">
+                            <div class="others-likes flex items-center group">
+                                <div
+                                    class="likes-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#2b0d1c] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#f91880] duration-300">
+                                        favorite
+                                    </span>
+                                </div>
+                                <span
+                                    class="likes-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#f91880] duration-300">33K</span>
+                            </div>
+                        </div>
+
+                        <!-- others views  -->
+                        <div class="others-views">
+                            <div class="others-views flex items-center group">
+                                <div
+                                    class="views-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        equalizer
+                                    </span>
+                                </div>
+                                <span
+                                    class="views-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">2.1M</span>
+                            </div>
+                        </div>
+
+                        <!-- bookmark and shares  -->
+                        <div class="bookmark-and-share flex items-center justify-center">
+                            <div class="others-bookmark-and-share flex items-center">
+                                <div
+                                    class="bookmark-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        bookmark
+                                    </span>
+                                </div>
+                                <div
+                                    class="share-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        share
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- post 3  -->
+            <div class="others-post flex p-3 gap-3 cursor-pointer">
+                <!-- pfp of others here  -->
+                <div class="others-pfp w-16">
+                    <img src="https://pbs.twimg.com/profile_images/1173962036130172930/IwOJ73ka_400x400.jpg" alt="
+                    Raj Kumar Official
+                     pfp" class="rounded-full">
+                </div>
+                <!-- all the text for other's post is here  -->
+                <div class="name-tag-text-views w-full max-[375px]:w-[80%]">
+                    <!-- text top line  -->
+                    <div class="others-name-and-dots flex justify-between">
+                        <div class="others-name-left">
+                            <span class="others-name font-bold hover:underline">
+                                Gagan Pratap
+                            </span>
+                            <span class="others-tag text-gray-500 hover:underline">
+                                @GaganPratapMath
+                            </span>
+                            <span class="text-gray-500">
+                                ·
+                            </span>
+                            <span class="others-time text-gray-500 hover:underline">
+                                5h
+                            </span>
+                        </div>
+                        <div class="others-three-dots">
+                            <button class="hover:text-[#1D99F0] duration-300 hover:bg-[#0b1821] px-1 rounded-full">
+                                <span class="material-symbols-outlined text-xl">
+                                    more_horiz
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- others hashtags  -->
+                    <!-- <div class="others-hastags">
+                        <a href="#" class="text-[#1D99F0] hover:underline">#GodMorningThursday</a>
+                    </div> -->
+
+                    <!-- others post text part  -->
+                    <div class="others-post-text">
+                        <pre class="text-wrap">मिलिए  IAS अधिकारी पूजा खेडकर से🥹
+
+मैडम ने तो नेताओं,को भी पीछे छोड़ दिया.... 🧐 😡
+                            
+फर्जी विकलांगता प्रमाण पत्र के साथ यूपीएससी पास कर ली, जबकि उनके पिता,  ₹40 करोड़ की संपत्ति के मालिक हैं, IAS अफ़सर पूजा के माता-पिता के पास नॉन-क्रीमी लेयर सर्टिफिकेट है. जबकि उनके पास कृषि भूमि सीलिंग अधिनियम का उल्लंघन करते हुए 110 एकड़ कृषि भूमि, 6 दुकानें (ये 1.6 लाख वर्ग फीट में बनी हैं), 7 फ्लैट ( इनमें से एक हीरानंदानी में), 900 ग्राम सोना, हीरे, 17 लाख रुपये की सोने की घड़ी, 4 कारें, दो प्राइवेट लिमिटेड कंपनियों और एक ऑटोमोबाइल फर्म में भागीदारी शामिल है. साथ ही, पूजा के पास ख़ुद 17 करोड़ रुपये की संपत्ति है
+                            
+अब पुणे ज़िला कलेक्टर के साथ उनकी ‘वॉट्सऐप चैट’ सामने आई है. इस कथित चैट में उन्होंने अपने लिए एक अलग ऑफ़िस, एक कार और एक घर की मांग की थी. ये मांगें उन्होंने पुणे में असिस्टेंट कलेक्टर के रूप में कार्यभार संभालने के पहले की थीं😞
+                        </pre>
+                    </div>
+
+                    <!-- This is image from others  -->
+                    <div class="others-image-post pr-8">
+                        <img src="https://pbs.twimg.com/media/GSMjvfwXUAA3z0R?format=jpg&name=900x900" alt="some img"
+                            class="rounded-2xl">
+                    </div>
+
+                    <!-- different buttons for different posts  -->
+                    <div class="others-post-btns flex justify-between items-center my-2 max-[375px]:flex-wrap">
+                        <!-- others comment -->
+                        <div class="others-comments flex items-center group">
+                            <div
+                                class="comment-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                <span
+                                    class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                    comment
+                                </span>
+                            </div>
+                            <span
+                                class="comment-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">124</span>
+                        </div>
+
+                        <!-- others repost  -->
+                        <div class="others-repost">
+                            <div class="others-repost flex items-center group">
+                                <div
+                                    class="repost-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b251b] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#00ba7c] duration-300">
+                                        repeat
+                                    </span>
+                                </div>
+                                <span
+                                    class="repost-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#00ba7c] duration-300">493</span>
+                            </div>
+                        </div>
+
+                        <!-- others likes  -->
+                        <div class="others-likes">
+                            <div class="others-likes flex items-center group">
+                                <div
+                                    class="likes-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#2b0d1c] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#f91880] duration-300">
+                                        favorite
+                                    </span>
+                                </div>
+                                <span
+                                    class="likes-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#f91880] duration-300">1.6K</span>
+                            </div>
+                        </div>
+
+                        <!-- others views  -->
+                        <div class="others-views">
+                            <div class="others-views flex items-center group">
+                                <div
+                                    class="views-icon flex items-center justify-center px-1.5 py-0.5 rounded-full group-hover:bg-[#0b1821] duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        equalizer
+                                    </span>
+                                </div>
+                                <span
+                                    class="views-btn-interactions text-xs relative right-1 text-gray-400 group-hover:text-[#1D99F0] duration-300">75K</span>
+                            </div>
+                        </div>
+
+                        <!-- bookmark and shares  -->
+                        <div class="bookmark-and-share flex items-center justify-center">
+                            <div class="others-bookmark-and-share flex items-center">
+                                <div
+                                    class="bookmark-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        bookmark
+                                    </span>
+                                </div>
+                                <div
+                                    class="share-icon flex items-center justify-center px-1.5 py-0.5 rounded-full hover:bg-[#0b1821] group  duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-xl text-gray-500 group-hover:text-[#1D99F0] duration-300">
+                                        share
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="w-[32%] px-7 max-xl:w-[44%] max-[900px]:hidden" id="right-bar">
+
+            <!-- Search section // right section top  -->
+            <div class="search-bg sticky top-0 p-1 bg-black">
+                <div class="search flex w-full px-4 py-1 gap-4 items-center bg-[#202327] rounded-full">
+                    <div class="search-icon">
+                        <span class="material-symbols-outlined text-2xl cursor-context-menu text-gray-500">
+                            search
+                        </span>
+                    </div>
+                    <div class="search w-full">
+                        <input type="search" name="search" id="search-bar" placeholder="Search"
+                            class="w-full placeholder-gray-500 outline-none bg-transparent">
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-section-bottom">
+                <!-- Buy premium  -->
+                <div class="premium px-4 py-3 my-4 border-[1px] border-gray-600 rounded-2xl">
+                    <h2 class="text-xl font-bold mb-2">Subscribe to Premium</h2>
+                    <p class="text-gray-200">Subscribe to unlock new features and if eligible, receive a share of ads
+                        revenue.</p>
+                    <button type="button"
+                        class="w-[33%] p-1 rounded-full font-medium bg-[#1D99F0] hover:bg-[#368cc9] duration-300 mt-2">Subscribe</button>
+                </div>
+    
+                <!-- what's happening part  -->
+                <div class="what-happen px-4 py-3 my-4 border-[1px] border-gray-600 rounded-2xl">
+                    <h1 class="text-lg font-bold mb-4">What’s happening</h1>
+                    <div class="what-top mb-3 rounded-xl duration-300 cursor-pointer hover:bg-[#181818] p-2">
+                        <div class="img-topic flex">
+                            <div class="topic-img w-28">
+                                <img src="https://play-lh.googleusercontent.com/rf7of4gezclDQJt6gsOTdSscn9xwezgCFMByrH-Sy_PL-wL87JrPGKh8EnCsbeGo5mw=w240-h480-rw"
+                                    alt="football" class="rounded-xl">
+                            </div>
+                            <div class="img-title-desc p-2">
+                                <h2 class="font-bold">Spain vs France</h2>
+                                <p class="text-xs text-gray-500">UEFA European Championship·Last night</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Trends sections  -->
+                    <div class="trend-box-cont flex flex-col gap-2 mb-3">
+                        <!-- Trend 1 -->
+                        <div
+                            class="trend-box flex items-center justify-between rounded-xl duration-300 cursor-pointer hover:bg-[#181818] p-2">
+                            <div class="trend-left">
+                                <p class="trend-top text-xs text-gray-500">
+                                    Trending in India
+                                </p>
+                                <h2 class="trend font-bold">
+                                    #Divorce
+                                </h2>
+                                <p class="trend-bottom text-xs text-gray-500">
+                                    Trending with <span class="text-[#1D99F0]">मुस्लिम महिला, #MuslimWomen</span>
+                                </p>
+                            </div>
+                            <div class="trend-right">
+                                <span class="material-symbols-outlined text-xl text-gray-500">
+                                    more_horiz
+                                </span>
+                            </div>
+                        </div>
+    
+                        <!-- Trend 2 -->
+                        <div
+                            class="trend-box flex items-center justify-between rounded-xl duration-300 cursor-pointer hover:bg-[#181818] p-2">
+                            <div class="trend-left">
+                                <p class="trend-top text-xs text-gray-500">
+                                    Sports · Trending
+                                </p>
+                                <h2 class="trend font-bold">
+                                    #KLRahul
+                                </h2>
+                                <p class="trend-bottom text-xs text-gray-500">
+                                    Trending with <span class="text-[#1D99F0]">#RuturajGaikwad, #ZIMvIND</span>
+                                </p>
+                            </div>
+                            <div class="trend-right">
+                                <span class="material-symbols-outlined text-xl text-gray-500">
+                                    more_horiz
+                                </span>
+                            </div>
+                        </div>
+    
+                        <!-- Trend 3 -->
+                        <div
+                            class="trend-box flex items-center justify-between rounded-xl duration-300 cursor-pointer hover:bg-[#181818] p-2">
+                            <div class="trend-left">
+                                <p class="trend-top text-xs text-gray-500">
+                                    Entertainment · Trending
+                                </p>
+                                <h2 class="trend font-bold">
+                                    #MalavikaMohanan
+                                </h2>
+                                <p class="trend-bottom text-xs text-gray-500">
+                                    1,601 posts
+                                </p>
+                            </div>
+                            <div class="trend-right">
+                                <span class="material-symbols-outlined text-xl text-gray-500">
+                                    more_horiz
+                                </span>
+                            </div>
+                        </div>
+    
+                        <!-- Trend 4  -->
+                        <div
+                            class="trend-box flex items-center justify-between rounded-xl duration-300 cursor-pointer hover:bg-[#181818] p-2">
+                            <div class="trend-left">
+                                <p class="trend-top text-xs text-gray-500">
+                                    Politics · Trending
+                                </p>
+                                <h2 class="trend font-bold">
+                                    #NitishKumar
+                                </h2>
+                                <p class="trend-bottom text-xs text-gray-500">
+                                    Trending with <span class="text-[#1D99F0]">#KatrinaKaif, Abhishek</span>
+                                </p>
+                            </div>
+                            <div class="trend-right">
+                                <span class="material-symbols-outlined text-xl text-gray-500">
+                                    more_horiz
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Show more trends  -->
+                    <a href="#" class="text-[#1D99F0]">Show more</a>
+                </div>
+    
+                <!-- who to follow  -->
+                <div class="who-to-follow px-2 py-1 my-4 border-[1px] border-gray-600 rounded-2xl flex flex-col gap-1">
+                    <h2 class="text-xl font-bold p-2">Who to follow</h2>
+                    <!-- follow cards  -->
+                    <div
+                        class="follow-cont flex justify-between items-center cursor-pointer hover:bg-[#181818] p-2 rounded-xl">
+                        <div class="follow-pfp-and-tag flex items-center gap-3 ">
+                            <div class="follow-img w-[30%]">
+                                <img src="https://pbs.twimg.com/profile_images/1800520500432515073/tMB_rJVh_bigger.jpg"
+                                    alt="modi img" class="rounded-full">
+                            </div>
+                            <div class="follow-text">
+                                <div class="follow-name font-semibold hover:underline">
+                                    PMO India
+                                </div>
+                                <div class="follow-tag text-gray-500">
+                                    @PMOIndia
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-button">
+                            <button
+                                class="font-semibold bg-white text-black px-4 py-1 rounded-3xl hover:bg-gray-300 hover:duration-300">Follow</button>
+                        </div>
+                    </div>
+                    <div
+                        class="follow-cont flex justify-between items-center cursor-pointer hover:bg-[#181818] p-2 rounded-xl">
+                        <div class="follow-pfp-and-tag flex items-center gap-3">
+                            <div class="follow-img w-[30%]">
+                                <img src="https://pbs.twimg.com/profile_images/1562753500726976514/EPSUNyR3_bigger.jpg"
+                                    alt="modi img" class="rounded-full">
+                            </div>
+                            <div class="follow-text">
+                                <div class="follow-name font-semibold hover:underline">
+                                    Virat Kohli
+                                </div>
+                                <div class="follow-tag text-gray-500">
+                                    @imVkohli
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-button">
+                            <button
+                                class="font-semibold bg-white text-black px-4 py-1 rounded-3xl hover:bg-gray-300 hover:duration-300">Follow</button>
+                        </div>
+                    </div>
+                    <div
+                        class="follow-cont flex justify-between items-center cursor-pointer hover:bg-[#181818] p-2 rounded-xl">
+                        <div class="follow-pfp-and-tag flex items-center gap-3">
+                            <div class="follow-img w-[30%]">
+                                <img src="https://pbs.twimg.com/profile_images/1404378291599937536/b-r3SWlW_bigger.jpg"
+                                    alt="modi img" class="rounded-full">
+                            </div>
+                            <div class="follow-text">
+                                <div class="follow-name font-semibold hover:underline">
+                                    ICC
+                                </div>
+                                <div class="follow-tag text-gray-500">
+                                    @ICC
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-button">
+                            <button
+                                class="font-semibold bg-white text-black px-4 py-1 rounded-3xl hover:bg-gray-300 hover:duration-300">Follow</button>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- footer here  -->
+                <footer>
+                    <div class="foot-cont flex flex-wrap items-center gap-3">
+                        <a href="#" class="text-xs text-gray-500 hover:underline">Terms of Services</a>
+                        <a href="#" class="text-xs text-gray-500 hover:underline">Privacy Policy</a>
+                        <a href="#" class="text-xs text-gray-500 hover:underline">Cookie Policy</a>
+                        <a href="#" class="text-xs text-gray-500 hover:underline">Accessibility</a>
+                        <a href="#" class="text-xs text-gray-500 hover:underline">Ads info</a>
+                        <a href="#" class="text-xs text-gray-500 hover:underline">More…</a>
+                        <span class="text-xs text-gray-500">© 2024 X Corp.</span>
+                    </div>
+                </footer>
+
+                <!-- This is just to take up some space  -->
+                <div class="ending-space h-[20vh]"></div>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>
